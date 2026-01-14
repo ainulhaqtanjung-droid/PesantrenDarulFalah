@@ -1,0 +1,5 @@
+# Ignore all contents in uploads
+uploads/*
+
+# Keep an empty placeholder file (opsional)
+!uploads/.gitkeep
