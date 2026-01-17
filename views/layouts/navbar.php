@@ -1,3 +1,5 @@
+<?php require_once __DIR__ . '/../../init.php'; ?>
+
 <style>
     body {
         background-color: #f8f9fa;
@@ -14,6 +16,12 @@
     .card {
         border-radius: 1rem;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+    
+    .logo-navbar {
+        height: 40px;
+        width: auto;
+        object-fit: contain;
     }
 
     .table thead {
@@ -68,22 +76,24 @@
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
         <!-- Brand -->
-        <a class="navbar-brand text-white fw-bold" href="<?php echo $_SESSION['role'] == 'admin' ? "dashboard_admin.php" : "dashboard.php" ?>">
-            PSB Pesantren Darul Falah
+        <a class="navbar-brand"
+           href="<?php echo $_SESSION['role'] == 'admin' ? "dashboard_admin.php" : "dashboard.php"; ?>">
+
+            <img src="<?= BASE_URL ?>public/logo.jpg"
+                 alt="Logo Pesantren"
+                 class="logo-navbar">
+
+            <span class="navbar-brand text-white fw-bold">PSB Pesantren Darul Falah</span>
         </a>
-        <!-- Toggler untuk mobile -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarButtons" aria-controls="navbarButtons" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
 
         <!-- Buttons -->
         <div class="collapse navbar-collapse justify-content-end" id="navbarButtons">
             <div class="d-flex gap-2">
                 <a href="<?php echo $_SESSION['role'] == 'admin' ? "dashboard_admin.php" : "dashboard.php" ?>" class="btn btn-outline-light">Dashboard</a>
                 <?php if ($_SESSION['role'] == 'santri') : ?>
-                <a href="/AinulHaqTanjung/psb_pesantren/views/profil.php" class="btn btn-outline-light">Profile Pesantren</a>
+                <a href="<?= BASE_URL ?>views/profil.php" class="btn btn-outline-light">Profile Pesantren</a>
                 <?php endif ?>
-                <a href="/AinulHaqTanjung/psb_pesantren/views/logout.php" class="btn btn-danger text-white">Logout</a>
+                <a href="<?= BASE_URL ?>views/logout.php" class="btn btn-danger text-white">Logout</a>
             </div>
         </div>
     </div>
