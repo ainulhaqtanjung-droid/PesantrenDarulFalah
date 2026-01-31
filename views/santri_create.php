@@ -9,7 +9,7 @@ include "layouts/navbar.php";
         <div class="card shadow-lg border-0 rounded-4 p-4">
             <h3 class="text-center mb-4 fw-semibold">Form Data Lengkap Santri</h3>
 
-            <form action="../controllers/santri/store.php" method="POST">
+            <form action="../controllers/santri/store.php" method="POST" enctype="multipart/form-data">
 
                 <div class="form-floating mb-3">
                     <input type="text" name="nama_santri" class="form-control" placeholder="Nama Santri">
@@ -52,6 +52,21 @@ include "layouts/navbar.php";
                 <div class="form-floating mb-3">
                     <input type="text" name="no_hp_orang_tua" class="form-control" placeholder="No HP Orang Tua">
                     <label>No HP Orang Tua</label>
+                </div>
+
+                <div class="mb-3">
+                    <label>Upload Kartu Keluarga</label>
+                    <input type="file" name="kartu_keluarga" class="form-control" accept="image/*,.pdf" required>
+                </div>
+
+                <div class="mb-3">
+                    <label>Upload Akta Kelahiran</label>
+                    <input type="file" name="akta_kelahiran" class="form-control" accept="image/*,.pdf" required>
+                </div>
+
+                <div class="mb-3">
+                    <label>Upload Ijazah / SKL</label>
+                    <input type="file" name="ijazah" class="form-control" accept="image/*,.pdf" required>
                 </div>
 
                 <button class="btn btn-primary w-100 rounded-3 fw-semibold py-2">

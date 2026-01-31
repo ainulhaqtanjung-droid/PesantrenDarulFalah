@@ -41,6 +41,19 @@ include "../layouts/navbar.php";
         <p><strong>Ayah:</strong> <?= $data['nama_ayah']; ?></p>
         <p><strong>Ibu:</strong> <?= $data['nama_ibu']; ?></p>
         <p><strong>No HP Orang Tua:</strong> <?= $data['no_hp_orang_tua']; ?></p>
+        <div class="mb-3">
+            <button class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#modalKK">
+                Lihat Kartu Keluarga
+            </button>
+
+            <button class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#modalAkta">
+                Lihat Akta Kelahiran
+            </button>
+
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalIjazah">
+                Lihat Ijazah / SKL
+            </button>
+        </div>
 
         <hr>
 
@@ -71,5 +84,55 @@ include "../layouts/navbar.php";
         </form>
     </div>
 </div>
+
+<div class="modal fade" id="modalKK" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content rounded-4">
+            <div class="modal-header">
+                <h5 class="modal-title">Kartu Keluarga</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body text-center">
+                <img src="../../uploads/dokumen/<?= $data['kartu_keluarga']; ?>"
+                    class="img-fluid rounded"
+                    alt="Kartu Keluarga">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalAkta" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content rounded-4">
+            <div class="modal-header">
+                <h5 class="modal-title">Akta Kelahiran</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body text-center">
+                <img src="../../uploads/dokumen/<?= $data['akta_kelahiran']; ?>"
+                    class="img-fluid rounded"
+                    alt="Akta Kelahiran">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalIjazah" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content rounded-4">
+            <div class="modal-header">
+                <h5 class="modal-title">Ijazah / SKL</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body text-center">
+                <img src="../../uploads/dokumen/<?= $data['ijazah']; ?>"
+                    class="img-fluid rounded"
+                    alt="Ijazah / SKL">
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php include "../layouts/scripts.php"; ?>
 
 <?php include "../layouts/footer.php"; ?>
